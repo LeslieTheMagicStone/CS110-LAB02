@@ -57,6 +57,12 @@ double back(Queue *queue)
     exit(1);
   }
 
+  if (queue->size == 0)
+  {
+    printf("Error: queue is empty\n");
+    exit(1);
+  }
+
   return queue->data[queue->size - 1];
 }
 
