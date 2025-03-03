@@ -24,6 +24,11 @@ Queue *queue_create(void)
 
 void push(Queue *queue, double element)
 {
+  if (queue == NULL)
+  {
+    printf("Error: queue is NULL\n");
+    exit(1);
+  }
 
   if (queue->size == queue->capacity)
   {
@@ -46,11 +51,22 @@ void push(Queue *queue, double element)
 
 double back(Queue *queue)
 {
+  if (queue == NULL)
+  {
+    printf("Error: queue is NULL\n");
+    exit(1);
+  }
+
   return queue->data[queue->size - 1];
 }
 
 void queue_free(Queue *queue)
 {
+  if (queue == NULL)
+  {
+    printf("Error: queue is NULL\n");
+    exit(1);
+  }
 
   free(queue->data);
   free(queue);
